@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Rachel Townson</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png">
+
+        <style>
+        button {
+              border-top-style: hidden;
+              border-right-style: hidden;
+              border-left-style: hidden;
+              border-bottom-style: groove;
+              background-color: #eee;
+            }
+
+        .my_button_research {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c9671), color-stop(1, #007b58) );
+                background:-moz-linear-gradient( center top, #1c9671 5%, #007b58 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c9671', endColorstr='#007b58');
+                background-color:#1c9671;
+                -webkit-border-top-left-radius:42px;
+                -moz-border-radius-topleft:42px;
+                border-top-left-radius:42px;
+                -webkit-border-top-right-radius:42px;
+                -moz-border-radius-topright:42px;
+                border-top-right-radius:42px;
+                -webkit-border-bottom-right-radius:42px;
+                -moz-border-radius-bottomright:42px;
+                border-bottom-right-radius:42px;
+                -webkit-border-bottom-left-radius:42px;
+                -moz-border-radius-bottomleft:42px;
+                border-bottom-left-radius:42px;
+            text-indent:0;
+                display:inline-block;
+                color:#ffffff;
+                font-family:Georgia;
+                font-size:14px;
+                font-weight:normal;
+                font-style:normal;
+            height:37px;
+                line-height:37px;
+            width:200px;
+                text-decoration:none;
+                text-align:center;
+            }.my_button_research:hover {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007b58), color-stop(1, #1c9671) );
+                background:-moz-linear-gradient( center top, #007b58 5%, #1c9671 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007b58', endColorstr='#1c9671');
+                background-color:#007b58;
+            }.my_button_research:active {
+                position:relative;
+                top:1px;
+            }
+
+        .my_button {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c9671), color-stop(1, #007b58) );
+                background:-moz-linear-gradient( center top, #1c9671 5%, #007b58 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c9671', endColorstr='#007b58');
+                background-color:#1c9671;
+                -webkit-border-top-left-radius:42px;
+                -moz-border-radius-topleft:42px;
+                border-top-left-radius:42px;
+                -webkit-border-top-right-radius:42px;
+                -moz-border-radius-topright:42px;
+                border-top-right-radius:42px;
+                -webkit-border-bottom-right-radius:42px;
+                -moz-border-radius-bottomright:42px;
+                border-bottom-right-radius:42px;
+                -webkit-border-bottom-left-radius:42px;
+                -moz-border-radius-bottomleft:42px;
+                border-bottom-left-radius:42px;
+            text-indent:0;
+                display:inline-block;
+                color:#ffffff;
+                font-family:Georgia;
+                font-size:14px;
+                font-weight:normal;
+                font-style:normal;
+            height:37px;
+                line-height:37px;
+            width:120px;
+                text-decoration:none;
+                text-align:center;
+            }.my_button:hover {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007b58), color-stop(1, #1c9671) );
+                background:-moz-linear-gradient( center top, #007b58 5%, #1c9671 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007b58', endColorstr='#1c9671');
+                background-color:#007b58;
+            }.my_button:active {
+                position:relative;
+                top:1px;
+            }
+
+        body, html {
+          height: 100%;
+          margin: 1px;
+        }
+
+        body {
+            background-color: #fff39e;
+            font-family: "Georgia", serif;
+        }
+
+        img {
+            border-radius: 50%;
+            margin-top: 15px
+        }
+
+        a {
+          color:#007b58;
+        }
+
+        .wrapper {
+            margin: 35px auto;
+            width: 1000px;
+        }
+
+        h1.main_h, button{
+            float: left;
+            margin: 5px;
+        }
+
+        .img_div {
+            margin: 50px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="About" class="tabcontent">
+                <button style="float:right" class="my_button" onclick="window.location.href = 'http://townsonr.pythonanywhere.com/welcome';"> Game </button>
+                <button style="float:right" class="my_button_research" onclick="openPage('Projects')"> Projects and Research </button>
+                <button style="float:right" class="my_button" onclick="openPage('About')" id="defaultOpen"> About Me </button>
+
+                <h1 class="main_h" style="color:#007b58;"> Hello! I'm Rachel Townson. <br> </h1>
+
+                <img src ="https://i.imgur.com/UOPhkx5.jpg">
+
+                <br>
+
+                <p> I grew up in White Lake, Michigan and am a current college sophomore studying computer science. I am also interested in economics, psychology, and music.
+                <p> When I'm not doing academic work, you can find me running, <a href="https://www.last.fm/user/Racheltownson24" target="_blank"> listening to music</a>, and going to concerts.</p>
+                <p> A fun fact about me: I taught myself to play the electric guitar and ukulele and I can also play the trumpet.</p>
+                <br>
+
+                <h2> Academics </h2>
+
+                <p> I am currently attending Michigan State Univeristy and intend to graduate in May 2023 with a degree in Computer Science and a minor in Cognitive Science through the College of Engineering and the Honors College.</p>
+                <p> In high school, I attended the International Academy West in White Lake, MI and graduated with an International Baccalaureate Diploma. </p>
+                <p> To see my resume, click <a href="https://docs.google.com/document/d/1TviZrM6XU8jE1FkQamNRc5mXmC1PRKznhocYHdHZfdA/edit?usp=sharing" target="_blank"> here</a>.</p>
+                <br>
+
+                <h2> Projects & Research </h2>
+
+                <p> I am currently working on a project studying the effetcs of music on collaborative and competitive behavior with <a href="https://ghassemi.xyz/" target="_blank"> Professor Mohammad Ghassemi</a>. </p>
+                <p> To read more about this project, click <u><a onclick="openPage('Projects')">here</a></u>. </p>
+                <br>
+                <p> I am also interested in topics including:</p>
+                <ul>
+                <li> machine learning </li>
+                <li> cognitive science </li>
+                <li> artificial intelligence </li>
+                </ul>
+                <br>
+
+                <h2> Contact Me </h2>
+                <p> Email: <a href="mailto:townsonr@msu.edu" target="_blank"> townsonr@msu.edu </a> </p>
+                <br>
+
+            </div>
+
+            <div id="Projects" class="tabcontent">
+                <button style="float:right" class="my_button" onclick="window.location.href = 'http://townsonr.pythonanywhere.com/welcome';"> Game </button>
+                <button style="float:right" class="my_button_research" onclick="openPage('Projects')"> Projects and Research </button>
+                <button style="float:right" class="my_button" onclick="openPage('About')" id="defaultOpen"> About Me </button>
+
+
+             <h1 style="color:#007b58;">Projects and Research</h1>
+
+             <h2> Current Project:</h2>
+             <p>Studying the effetcs of music on collaborative and competitive behavior with Professor Mohammad Ghassemi.</p>
+             <br>
+
+             <h3> Brief Overview</h1>
+             <p> The environment that people are placed in can influence them to act in specific ways, such as more collaboratively or competitively.
+             <p> Music and noise are important components of one's environment, so listening to different types of music should make people react in different ways to the same stimuli. </p>
+             <p> If the specific qualities of music that evoke specific reactions can be identified, we may be able to use computers to help create new music following these guidelines.  </p>
+             <br>
+
+            </div>
+        </div>
+
+
+        <script>
+        function openPage(pageName,elmnt,color) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
+
+        document.getElementById("defaultOpen").click();
+        </script>
+
+
+    </body>
+</html>
