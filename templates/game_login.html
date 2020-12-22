@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title> Login</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png">
+
+        <style>
+            body {
+                background-color: #fff39e;
+                text-align: center;
+                color: #007b58;
+                font-family: "Georgia", serif;
+                margin: 35px auto;
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            input.my_button {
+              border-top-style: hidden;
+              border-right-style: hidden;
+              border-left-style: hidden;
+              border-bottom-style: groove;
+              background-color: #eee;
+            }
+
+            .my_button {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c9671), color-stop(1, #007b58) );
+                background:-moz-linear-gradient( center top, #1c9671 5%, #007b58 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c9671', endColorstr='#007b58');
+                background-color:#1c9671;
+                -webkit-border-top-left-radius:42px;
+                -moz-border-radius-topleft:42px;
+                border-top-left-radius:42px;
+                -webkit-border-top-right-radius:42px;
+                -moz-border-radius-topright:42px;
+                border-top-right-radius:42px;
+                -webkit-border-bottom-right-radius:42px;
+                -moz-border-radius-bottomright:42px;
+                border-bottom-right-radius:42px;
+                -webkit-border-bottom-left-radius:42px;
+                -moz-border-radius-bottomleft:42px;
+                border-bottom-left-radius:42px;
+            text-indent:0;
+                display:inline-block;
+                color:#ffffff;
+                font-family:Georgia;
+                font-size:14px;
+                font-weight:normal;
+                font-style:normal;
+            height:37px;
+                line-height:37px;
+            width:120px;
+                text-decoration:none;
+                text-align:center;
+            }.my_button:hover {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007b58), color-stop(1, #1c9671) );
+                background:-moz-linear-gradient( center top, #007b58 5%, #1c9671 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007b58', endColorstr='#1c9671');
+                background-color:#007b58;
+            }.my_button:active {
+                position:relative;
+                top:1px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <audio id="audio" src="{{url_for('static', filename='mouseclick.mp3')}}"></audio>
+        <form method="post" action="/get_login">
+                <h3>What is your name?</h3>
+                <p>Please use the same name each time you play.</p>
+
+                <input type="text" name="name">
+                <br>
+                <br>
+                <input class="my_button" id=button type="submit" value="submit">
+            </form>
+                </form>
+    </body>
+</html>
