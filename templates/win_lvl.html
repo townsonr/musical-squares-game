@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <title> Game Over</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+            body {
+                background-color: #fff39e;
+                text-align: center;
+                color: #007b58;
+                font-family: "Georgia", serif;
+                font-size: 20px;
+            }
+
+            .wrapper {
+                margin: 100px auto;
+                width: 530px;
+                border: 5px solid rgba(0, 122, 88, 0.5);
+                border-radius: 25px;
+                padding: 10px;
+            }
+
+            .my_button {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c9671), color-stop(1, #007b58) );
+                background:-moz-linear-gradient( center top, #1c9671 5%, #007b58 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c9671', endColorstr='#007b58');
+                background-color:#1c9671;
+                -webkit-border-top-left-radius:42px;
+                -moz-border-radius-topleft:42px;
+                border-top-left-radius:42px;
+                -webkit-border-top-right-radius:42px;
+                -moz-border-radius-topright:42px;
+                border-top-right-radius:42px;
+                -webkit-border-bottom-right-radius:42px;
+                -moz-border-radius-bottomright:42px;
+                border-bottom-right-radius:42px;
+                -webkit-border-bottom-left-radius:42px;
+                -moz-border-radius-bottomleft:42px;
+                border-bottom-left-radius:42px;
+            text-indent:0;
+                display:inline-block;
+                color:#ffffff;
+                font-family:Georgia;
+                font-size:14px;
+                font-weight:normal;
+                font-style:normal;
+            height:37px;
+                line-height:37px;
+            width:120px;
+                text-decoration:none;
+                text-align:center;
+            }.my_button:hover {
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007b58), color-stop(1, #1c9671) );
+                background:-moz-linear-gradient( center top, #007b58 5%, #1c9671 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007b58', endColorstr='#1c9671');
+                background-color:#007b58;
+            }.my_button:active {
+                position:relative;
+                top:1px;
+            }
+
+    </style>
+    <body>
+        <div class="wrapper">
+            <h3> You Win!! </h3>
+            <p> Your score was {{my_score}}.</p>
+            <p> To start a new game, <a class="my_button" id=continue>Click Here</a> </h3>
+            <p> To return to the home page, <a class="my_button" id=home>Click Here</a> </h3>
+        </div>
+    </body>
+    <script>
+        $("#continue").click(function() {
+            location.assign("/play/lvl1");
+        });
+
+        $("#home").click(function() {
+            location.assign("/welcome");
+        });
+    </script>
+</html>
