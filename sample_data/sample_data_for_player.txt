@@ -1,0 +1,25 @@
+Data for rachel
+         number of total moves: 160
+         number of total bad moves: 2
+         percent error over all games: 1.250%
+         ---------------------------------
+         number of practice moves: 39
+         number of practice bad moves: 1
+         percent error over practice games: 2.564%
+         ---------------------------------
+         number of game moves: 121
+         number of game bad moves: 1
+         percent error over real games: 0.826%
+         ---------------------------------
+         number of moves while listening to "stoned": 48
+         number of bad moves while listening to "stoned": 0
+         percent error while listening to "stoned": 0.000%
+         ---------------------------------
+         number of moves while listening to "vintageradiostation": 73
+         number of bad moves while listening to "vintageradiostation": 1
+         percent error while listening to "vintageradiostation": 1.370%
+         ---------------------------------
+         avg speed of cursor for all moves: 5.99 (moves/second)
+         avg speed of cursor for practice moves: 2.27 (moves/second)
+         avg speed of cursor for game moves: 7.1 (moves/second)
+         ---------------------------------
