@@ -53,6 +53,7 @@ class Hover(db.Model):
     state = db.Column(db.String(20))  # good or bad
     music = db.Column(db.String(20))  # name of song playing
 
+    
 class GridInfo(db.Model):
     '''Tracks the layout of the grid each time the player starts a new round.'''
 
@@ -70,10 +71,12 @@ class GridInfo(db.Model):
     orange = db.Column(db.String(20))
     level = db.Column(db.Integer)
 
+    
 @login_manager.user_loader
 def load_user(user_id):
     ''' gets username of currently logged in player '''
     return User.query.get(int(user_id))
+
 
 @app.route('/home')
 @app.route('/')
@@ -81,10 +84,23 @@ def home():
     ''' Displays home page of personal website '''
     return render_template('home.html')
 
+
 @app.route('/welcome')
 def welcome():
     ''' Displays welcome message and gif '''
     return render_template('welcome.html')
+
+
+@app.route('/credit')
+def credit():
+    ''' Displays credits for music used in the game '''
+    return render_template('music_credit.html')
+
+
+@app.route('/about')
+def about():
+    ''' Displays info about the research project '''
+    return render_template('about.html')
 
 
 @app.route('/login')
@@ -101,7 +117,6 @@ def get_login():
     user = User.query.filter_by(username=name).first()
     if user:
         login_user(user)
-        print("{} is now logged in!".format(user))
         form_bool = current_user.form_filled
         if form_bool:
             return redirect('/instructions')
@@ -112,10 +127,9 @@ def get_login():
         db.session.commit()
         user = User.query.filter_by(username=name).first()
         login_user(user)
-        print("{} is now logged in!".format(user))
         return redirect('/form')
 
-
+    
 @app.route('/form')
 def form():
     ''' Displays Google form to collect info about current player '''
@@ -160,7 +174,6 @@ def get_level(my_lvl):
 def get_data():
     '''Adds a move to the data table'''
     data_dict = request.get_json(force=True)
-    print(data_dict)
     username = current_user.username
     element_id = data_dict['element_id']
     event = data_dict['event']
@@ -172,49 +185,10 @@ def get_data():
     return jsonify({"hello": "world"})
 
 
-# practice rounds
-@app.route('/play/practice/lvl1')
-def practice_lvl1():
-    return render_template('new_play.html', rounds_in_lvl=5, next_lvl="practice/lvl2", start_score=0, this_lvl=1,
-    music="", username=current_user.username, mus_name="---")
-
-
-@app.route('/play/practice/lvl2')
-def practice_lvl2():
-    return render_template('new_play.html', rounds_in_lvl=10, next_lvl="practice/lvl3", start_score=5, this_lvl=2,
-    music="", username=current_user.username, mus_name="---")
-
-
-@app.route('/play/practice/lvl3')
-def practice_lvl3():
-    return render_template('new_play.html', rounds_in_lvl=20, next_lvl="practice/lvl4", start_score=15, this_lvl=3,
-    music="", username=current_user.username, mus_name="---")
-
-
-@app.route('/play/practice/lvl4')
-def practice_lvl4():
-    return render_template('new_play.html', rounds_in_lvl=40, next_lvl="practice/lvl5", start_score=35, this_lvl=4,
-    music="", username=current_user.username, mus_name="---")
-
-
-@app.route('/play/practice/lvl5')
-def practice_lvl5():
-    return render_template('new_play.html', rounds_in_lvl=80, next_lvl="play", start_score=75, this_lvl=5,
-    music="", username=current_user.username, mus_name="---")
-
-
-@app.route('/pratice/lvlwin_<my_score>')
-def practice_win(my_score):
-    old_score = current_user.high_score
-    if not old_score:
-        old_score = 0
-    print(old_score)
-    print(my_score)
-    new_score = int(my_score)
-    if new_score > old_score:
-        current_user.high_score = my_score
-        db.session.commit()
-    return render_template('win_practice.html', my_score=my_score)
+@app.route('/start_trial/trial<trial_number>')
+def start_trial(trial_number):
+    ''' Displays trial start page'''
+    return render_template('start_trial.html', trial_number=trial_number)
 
 
 # default play (for testing)
@@ -226,98 +200,77 @@ def game_play():
 
 
 # levels w/ specified rounds
-@app.route('/play/lvl1')
-def lvl1():
+@app.route('/play/lvl1/trial<trial_number>')
+def lvl1(trial_number):
     mus_name, mus_link = gridfunctions.get_music("random")
     return render_template('new_play.html', rounds_in_lvl=5, next_lvl="lvl2", start_score=0, this_lvl=1,
-    music=mus_link, username=current_user.username, mus_name=mus_name)
+    music=mus_link, username=current_user.username, mus_name=mus_name, trial_number=trial_number)
 
 
-@app.route('/play/lvl2')
-def lvl2():
+@app.route('/play/lvl2/trial<trial_number>')
+def lvl2(trial_number):
     mus_name, mus_link = gridfunctions.get_music("random")
     return render_template('new_play.html', rounds_in_lvl=10, next_lvl="lvl3", start_score=5, this_lvl=2,
-    music=mus_link, username=current_user.username, mus_name=mus_name)
+    music=mus_link, username=current_user.username, mus_name=mus_name, trial_number=trial_number)
 
 
-@app.route('/play/lvl3')
-def lvl3():
+@app.route('/play/lvl3/trial<trial_number>')
+def lvl3(trial_number):
     mus_name, mus_link = gridfunctions.get_music("random")
     return render_template('new_play.html', rounds_in_lvl=20, next_lvl="lvl4", start_score=15, this_lvl=3,
-    music=mus_link, username=current_user.username, mus_name=mus_name)
+    music=mus_link, username=current_user.username, mus_name=mus_name, trial_number=trial_number)
 
 
-@app.route('/play/lvl4')
-def lvl4():
+@app.route('/play/lvl4/trial<trial_number>')
+def lvl4(trial_number):
     mus_name, mus_link = gridfunctions.get_music("random")
     return render_template('new_play.html', rounds_in_lvl=40, next_lvl="lvl5", start_score=35, this_lvl=4,
-    music=mus_link, username=current_user.username, mus_name=mus_name)
+    music=mus_link, username=current_user.username, mus_name=mus_name, trial_number=trial_number)
 
 
-@app.route('/play/lvl5')
-def lvl5():
+@app.route('/play/lvl5/trial<trial_number>')
+def lvl5(trial_number):
     mus_name, mus_link = gridfunctions.get_music("random")
     return render_template('new_play.html', rounds_in_lvl=80, next_lvl="win", start_score=75, this_lvl=5,
-    music=mus_link, username=current_user.username, mus_name=mus_name)
+    music=mus_link, username=current_user.username, mus_name=mus_name, trial_number=trial_number)
 
 
 @app.route('/get_lvl_data', methods=['POST'])
 def get_lvl_data():
     data = request.json
     new_data = json.loads(data)
-    print(new_data)
     return jsonify(data)
 
 
-@app.route('/play/lvlwin_<my_score>')
-def win(my_score):
+@app.route('/play/lvlwin_<my_score>/trial<trial_number>')
+def win(my_score, trial_number):
     ''' Displays "win" message with player score, adds new score to data table '''
     old_score = current_user.high_score
     if not old_score:
         old_score = 0
-    print(old_score)
-    print(my_score)
     new_score = int(my_score)
     if new_score > old_score:
         current_user.high_score = my_score
         db.session.commit()
-    return render_template('win_lvl.html', my_score=my_score)
+    return render_template('win_lvl.html', my_score=my_score, trial_number=trial_number)
 
 
-@app.route('/badclick_<my_score>')
-def bad_click(my_score):
-    ''' Displays end of game screen with score when player hovers over red square '''
-    return render_template('bad_click.html', my_score=my_score)
-
-
-@app.route('/update_score_<my_score>')
-def update_score(my_score):
-    ''' Adds new high score to database if higher than previous stored score '''
+@app.route('/update_score_<my_score>/trial<trial_number>/<status>')
+def update_score(my_score, trial_number, status):
+    ''' Adds new high score to database if higher than previous stored score , displays or redirects to appropriate page'''
     old_score = current_user.high_score
     if not old_score:
         old_score = 0
-    print(old_score)
-    print(my_score)
     new_score = int(my_score)
     if new_score > old_score:
         current_user.high_score = my_score
         db.session.commit()
-    return render_template('bad_click.html', my_score=my_score, old_score=old_score)
-
-
-@app.route('/practice/update_score_<my_score>')
-def update_pracice_score(my_score):
-    ''' Adds new practice high score to database if higher than previous stored score '''
-    old_score = current_user.high_score
-    if not old_score:
-        old_score = 0
-    print(old_score)
-    print(my_score)
-    new_score = int(my_score)
-    if new_score > old_score:
-        current_user.practice_score = my_score
-        db.session.commit()
-    return render_template('bad_click_practice.html', my_score=my_score, old_score=old_score)
+    if (trial_number == "4"):
+        if (status == "good"):
+            return redirect("end_good/" + my_score)
+        elif (status == "bad"):
+            return redirect("end_bad/" + my_score)
+    return render_template('bad_click.html', my_score=my_score, old_score=old_score, trial_number=trial_number)
 
 
 @app.route('/update_form_filled')
@@ -328,10 +281,25 @@ def update_form():
     return redirect('/instructions')
 
 
+@app.route('/end_good/<player_score>')
+def end_good(player_score):
+    ''' Displays end of game page after player wins the last trial'''
+    return render_template('end_game_good.html', my_score=player_score)
+
+
+@app.route('/end_bad/<player_score>')
+def end_bad(player_score):
+    ''' Displays end of game page after player loses in the last trial'''
+    return render_template('end_game_bad.html', my_score=player_score)
+
+
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect('/welcome')
 
+
 if __name__ == '__main__':
     app.run()
+
+    
