@@ -1,66 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Player Information</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png">
+        <title>Player Information</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png" />
+        <link rel="stylesheet" href="/static/stylesheet.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <style>
-            body {
-                background-color: #fff39e;
+            .main {
                 text-align: center;
-                color: #007b58;
-                font-family: "Georgia", serif;
+                height: 710px;
             }
 
-            .my_button {
-                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c9671), color-stop(1, #007b58) );
-                background:-moz-linear-gradient( center top, #1c9671 5%, #007b58 100% );
-                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c9671', endColorstr='#007b58');
-                background-color:#1c9671;
-                -webkit-border-top-left-radius:42px;
-                -moz-border-radius-topleft:42px;
-                border-top-left-radius:42px;
-                -webkit-border-top-right-radius:42px;
-                -moz-border-radius-topright:42px;
-                border-top-right-radius:42px;
-                -webkit-border-bottom-right-radius:42px;
-                -moz-border-radius-bottomright:42px;
-                border-bottom-right-radius:42px;
-                -webkit-border-bottom-left-radius:42px;
-                -moz-border-radius-bottomleft:42px;
-                border-bottom-left-radius:42px;
-            text-indent:0;
-                display:inline-block;
-                color:#ffffff;
-                font-family:Georgia;
-                font-size:14px;
-                font-weight:normal;
-                font-style:normal;
-            height:37px;
-                line-height:37px;
-            width:120px;
-                text-decoration:none;
-                text-align:center;
-            }.my_button:hover {
-                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007b58), color-stop(1, #1c9671) );
-                background:-moz-linear-gradient( center top, #007b58 5%, #1c9671 100% );
-                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007b58', endColorstr='#1c9671');
-                background-color:#007b58;
-            }.my_button:active {
-                position:relative;
-                top:1px;
+            p {
+                width: 700px;
+                text-align: center;
+                margin: 10px auto;
             }
-
         </style>
     </head>
+
     <body>
-        <h2> Before you play, please answer a few questions. </h2>
-        <br>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdCwPzxYhQgs9IRJTVMEMTgqgf5YMV-DRfC5EtVX12k9RJBMg/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        <br>
-        <br>
-        <p> Please scroll to the bottom of the form and click <b>Submit</b> before you continue to the instructions.</p>
-        <br>
-        <a class="my_button" onclick="window.location.href = 'http://townsonr.pythonanywhere.com/update_form_filled';">Continue</a>
+        <div class="main">
+            <div class="header">
+                <a href="http://townsonr.pythonanywhere.com/home"><img style="float: left; width: 32px; height: 32px; border: 0; border-radius: 0; padding-left: 18px; padding-top: 10px;" src="https://i.imgur.com/LrMfrIc.png" /></a>
+                <h2>
+                    <a href="http://townsonr.pythonanywhere.com/welcome">Musical Squares</a> | <a href="http://townsonr.pythonanywhere.com/about" target="_blank"> About </a> |
+                    <a href="http://townsonr.pythonanywhere.com/music_credit" target="_blank"> Credit</a>
+                </h2>
+            </div>
+
+            <h2 style="margin-top: 0;">Before you play, please answer a few questions.</h2>
+
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdCwPzxYhQgs9IRJTVMEMTgqgf5YMV-DRfC5EtVX12k9RJBMg/viewform?embedded=true" width="700" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <br />
+            <p>Please scroll to the bottom of the form and click <b>Next</b> then <b>Submit</b> before you continue to the instructions.</p>
+
+            <a href="http://townsonr.pythonanywhere.com/instructions"><button>Continue</button></a>
+        </div>
     </body>
 </html>
