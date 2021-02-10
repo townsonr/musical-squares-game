@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Music Credit</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png" />
+        <link rel="stylesheet" href="/static/stylesheet.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <style>
+            body {
+                height: min-content;
+                overflow: scroll;
+            }
+
+            .main {
+                padding-bottom: 25px;
+                height: min-content;
+            }
+
+            h2 {
+                color: #0f0326;
+            }
+
+            .column {
+                width: 80%;
+                padding: 25px;
+                float: left;
+                margin-right: 10%;
+                margin-left: 10%;
+            }
+
+            p {
+                background-color: #e4d0e4;
+                border-radius: 10px;
+                padding: 20px 50px;
+                text-align: left;
+            }
+
+            img {
+                float: left;
+                width: 32px;
+                height: 32px;
+                border: 0;
+                border-radius: 0;
+                padding-left: 18px;
+                padding-top: 10px;
+            }
+
+            button {
+                background-color: #007b58;
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                width: fit-content;
+            }
+
+            button:hover {
+                color: white;
+            }
+            .play {
+                display: inline;
+                padding-left: 10px;
+            }
+            .play:hover {
+                color: #007b58;
+            }
+        </style>
+    </head>
+    <body>
+        <audio autoplay id="audio"></audio>
+
+        <div class="main">
+            <div class="header">
+                <a href="http://townsonr.pythonanywhere.com/home"><img style="" src="https://i.imgur.com/LrMfrIc.png" /></a>
+                <h2><a href="https://townsonr.pythonanywhere.com/welcome">Musical Squares</a> | <a href="https://townsonr.pythonanywhere.com/about"> About </a></h2>
+            </div>
+            <h1>Music Credit</h1>
+            <div class="column">
+                <h2>
+                    A Great Calm
+                    <div class="play" onclick="play('https://www.free-stock-music.com/music/kev-rowe-a-great-calm.mp3')">&#9658;</div>
+                </h2>
+                <p>
+                    A Great Calm by Kev Rowe | <a href="https://kevrowe.com" target="_blank">https://kevrowe.com</a> Music promoted by<a href="https://www.free-stock-music.com" target="_blank"> https://www.free-stock-music.com</a> Creative
+                    Commons Attribution 3.0 Unported License <a href="https://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank"> https://creativecommons.org/licenses/by/3.0/deed.en_US</a>
+                </p>
+                <h2>
+                    City Life
+                    <div class="play" onclick="play('https://www.free-stock-music.com/music/artificial-music-city-life.mp3')">&#9658;</div>
+                </h2>
+                <p>
+                    City Life by Artificial.Music | <a href="https://soundcloud.com/artificial-music" target="_blank"> https://soundcloud.com/artificial-music</a> Music promoted by
+                    <a href="https://www.free-stock-music.com" target="_blank"> https://www.free-stock-music.com</a> Creative Commons Attribution 3.0 Unported License
+                    <a href="https://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank"> https://creativecommons.org/licenses/by/3.0/deed.en_US</a>
+                </p>
+                <h2>
+                    Kaleidoscope
+                    <div class="play" onclick="play('https://www.free-stock-music.com/music/fsm-team-escp-kaleidoscope.mp3')">&#9658;</div>
+                </h2>
+                <p>
+                    Kaleidoscope by | e s c p |<a href="https://escp-music.bandcamp.com" target="_blank"> https://escp-music.bandcamp.com</a> Music promoted by
+                    <a href="https://www.free-stock-music.com" target="_blank"> https://www.free-stock-music.com</a> Attribution 4.0 International (CC BY 4.0)
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"> https://creativecommons.org/licenses/by/4.0/</a>
+                </p>
+                <h2>
+                    Midnight Drive
+                    <div class="play" onclick="play('https://www.free-stock-music.com/music/inossi-midnight-drive.mp3')">&#9658;</div>
+                </h2>
+                <p>
+                    Midnight Drive by INOSSI | <a href="https://soundcloud.com/inossi" target="_blank"> https://soundcloud.com/inossi</a> Music promoted by
+                    <a href="https://www.free-stock-music.com" target="_blank"> https://www.free-stock-music.com</a> Creative Commons Attribution 3.0 Unported License
+                    <a href="https://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank"> https://creativecommons.org/licenses/by/3.0/deed.en_US</a>
+                </p>
+                <h2>
+                    Short Break
+                    <div class="play" onclick="play('https://www.free-stock-music.com/music/glitch-short-break.mp3')">&#9658;</div>
+                </h2>
+                <p>
+                    Short Break by Glitch |<a href="https://soundcloud.com/glitch" target="_blank"> https://soundcloud.com/glitch</a> Music promoted by
+                    <a href="https://www.free-stock-music.com" target="_blank"> https://www.free-stock-music.com</a> Creative Commons Attribution 3.0 Unported License
+                    <a href="https://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank"> https://creativecommons.org/licenses/by/3.0/deed.en_US</a>
+                </p>
+                <h2>
+                    Stoned
+                    <div class="play" onclick="play('https://www.free-stock-music.com/music/alexander-nakarada-stoned.mp3')">&#9658;</div>
+                </h2>
+                <p>
+                    Stoned by Alexander Nakarada |<a href="https://www.serpentsoundstudios.com" target="_blank"> https://www.serpentsoundstudios.com</a> Music promoted by
+                    <a href="https://www.free-stock-music.com" target="_blank"> https://www.free-stock-music.com</a> Attribution 4.0 International (CC BY 4.0)
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"> https://creativecommons.org/licenses/by/4.0/</a>
+                </p>
+                <h2>
+                    Vintage Radio Station
+                    <div class="play" onclick="play('https://www.free-stock-music.com/music/sakura-hz-vintage-radio-station.mp3')">&#9658;</div>
+                </h2>
+                <p>
+                    Vintage Radio Station by sakura Hz |<a href="https://soundcloud.com/sakurahertz"> https://soundcloud.com/sakurahertz</a> Music promoted by
+                    <a href="https://www.free-stock-music.com" target="_blank"> https://www.free-stock-music.com</a> Creative Commons Attribution 3.0 Unported License
+                    <a href="https://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank"> https://creativecommons.org/licenses/by/3.0/deed.en_US</a>
+                </p>
+                <br />
+                <a href="https://townsonr.pythonanywhere.com/welcome"><button>Return to Game</button></a>
+                <br />
+            </div>
+        </div>
+    </body>
+    <script>
+        function play(my_file) {
+            var audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.setAttribute("src", my_file);
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</html>
