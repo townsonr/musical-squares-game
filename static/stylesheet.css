@@ -1,0 +1,89 @@
+.header {
+    overflow: hidden;
+    background-color: #fff39e;
+    position: fixed;
+    top: 0;
+    width: 1000px;
+    border-radius: 0px 0px 10px 10px;
+    margin: 0 auto;
+}
+
+.header h2 {
+    float: right;
+    display: block;
+    text-align: center;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: normal;
+    color: #007b58;
+    font-family: "Courier New", monospace;
+}
+
+.main {
+    padding-top: 70px;
+    margin: 20px auto 0px;
+    width: 1000px;
+    height: 1000px;
+    line-height: 1.7;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0px 0px;
+    margin: 0;
+    font-size: 40px;
+    color: #007b58;
+}
+
+h2.main {
+    color: #0f0326;
+    padding-left: 10px;
+}
+
+body {
+    font-family: "Georgia", serif;
+    background-color: rgba(200, 162, 200, 0.05);
+}
+
+p {
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+a {
+    color: #007b58;
+    font-family: "Courier New", monospace;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #007b58;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+.wrapper {
+    margin: 35px auto;
+    width: 1000px;
+}
+
+.button,
+button {
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    text-align: center;
+    border-width: 0;
+    border-color: white;
+    background-color: rgba(200, 162, 200, 0.5);
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+
+.button:hover,
+button:hover {
+    font-weight: bold;
+}
