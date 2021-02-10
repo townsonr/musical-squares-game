@@ -2,12 +2,13 @@
 <html>
     <head>
         <title> Play!</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png">
-
+        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png" />
+        <link rel="stylesheet" href="/static/stylesheet.css" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <style>
-            th, td {
+            th,
+            td {
                 border: solid white;
                 border-width: 4px;
                 border-collapse: collapse;
@@ -25,498 +26,510 @@
                 height: auto;
             }
 
-
-            div.big_div {
-                height: 55vh;
-            }
-
             td {
                 height: 11vh;
                 width: 12vh;
             }
 
-            td:hover,
-            th:hover {
-                background-color: #a2c7b6;
+            .main {
+                width: 90%;
+                height: min-content;
             }
 
-            td:active,
-            th:active {
-                background-color: #007b58;
-            }
-
-            body {
-                background-color: #fff39e;
-            }
-
-            ul {
-                margin: 0;
-                padding: 10px;
-                background-color: #007b58;
-                font-family: "Georgia", serif;
-                color: white;
-            }
-
-            li {
-                display: inline;
-            }
-
-            div.fixed {
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                width: 200px;
-                border: 3px solid #007b58;
-                font-family: "Georgia", serif;
+            .header {
+                width: 90%;
+                padding-bottom: 0;
             }
         </style>
     </head>
+
     <body>
         <audio autoplay loop>
-            <source src="{{music}}" type="audio/mpeg">
+            <source src="{{music}}" type="audio/mpeg" />
         </audio>
-        <div class="big_div">
+        <div class="main">
 
-            <ul>
-                <li>To play: click the <b><a style="color:#599B85"> green </a></b>box, but don't touch the <b><a style="color:#ba2200"> red</a></b> boxes!</li>
-                <li style="float:right" id="score"> score: {{score}} | level: {{this_level}} | {{username}} </li>
-            </ul>
-            <br>
+            <div class="header">
+                <h2 style="float: left; padding-left: 20px;">
+                    <b>To play: </b>click the <b><a style="color: #007b58;"> green </a></b> boxes, but don't touch the <b><a style="color: #ba2200;"> red</a></b> boxes!
+                </h2>
+                <h2 style="float: right; padding-right: 20px;" id="score">score: {{score}} | level: {{this_level}} | {{username}}</h2>
+            </div>
+
             <div class="table_div">
                 <table>
-                    <tr></tr>  <!-- row A-->
-                        <td  id="A_1" ></td>
-                        <td  id="A_2"></td>
-                        <td  id="A_3"></td>
-                        <td  id="A_4"></td>
-                        <td  id="A_5"></td>
-                        <td  id="A_6"></td>
-                        <td  id="A_7"></td>
+                    <tr></tr>
+                    <!-- row A-->
+                    <td id="A_1"></td>
+                    <td id="A_2"></td>
+                    <td id="A_3"></td>
+                    <td id="A_4"></td>
+                    <td id="A_5"></td>
+                    <td id="A_6"></td>
+                    <td id="A_7"></td>
 
-                    <tr></tr> <!-- row B-->
-                        <td  id="B_1"></td>
-                        <td  id="B_2"></td>
-                        <td  id="B_3"></td>
-                        <td  id="B_4"></td>
-                        <td  id="B_5"></td>
-                        <td  id="B_6"></td>
-                        <td  id="B_7"></td>
+                    <tr></tr>
+                    <!-- row B-->
+                    <td id="B_1"></td>
+                    <td id="B_2"></td>
+                    <td id="B_3"></td>
+                    <td id="B_4"></td>
+                    <td id="B_5"></td>
+                    <td id="B_6"></td>
+                    <td id="B_7"></td>
 
-                    <tr></tr> <!-- row C-->
-                        <td  id="C_1"></td>
-                        <td  id="C_2"></td>
-                        <td  id="C_3"></td>
-                        <td  id="C_4"></td>
-                        <td  id="C_5"></td>
-                        <td  id="C_6"></td>
-                        <td  id="C_7"></td>
+                    <tr></tr>
+                    <!-- row C-->
+                    <td id="C_1"></td>
+                    <td id="C_2"></td>
+                    <td id="C_3"></td>
+                    <td id="C_4"></td>
+                    <td id="C_5"></td>
+                    <td id="C_6"></td>
+                    <td id="C_7"></td>
 
-                    <tr></tr> <!-- row D-->
-                        <td  id="D_1"></td>
-                        <td  id="D_2"></td>
-                        <td  id="D_3"></td>
-                        <td  id="D_4"></td>
-                        <td  id="D_5"></td>
-                        <td  id="D_6"></td>
-                        <td  id="D_7"></td>
+                    <tr></tr>
+                    <!-- row D-->
+                    <td id="D_1"></td>
+                    <td id="D_2"></td>
+                    <td id="D_3"></td>
+                    <td id="D_4"></td>
+                    <td id="D_5"></td>
+                    <td id="D_6"></td>
+                    <td id="D_7"></td>
 
-                    <tr></tr> <!-- row E-->
-                        <td  id="E_1"></td>
-                        <td  id="E_2"></td>
-                        <td  id="E_3"></td>
-                        <td  id="E_4"></td>
-                        <td  id="E_5"></td>
-                        <td  id="E_6"></td>
-                        <td  id="E_7"></td>
+                    <tr></tr>
+                    <!-- row E-->
+                    <td id="E_1"></td>
+                    <td id="E_2"></td>
+                    <td id="E_3"></td>
+                    <td id="E_4"></td>
+                    <td id="E_5"></td>
+                    <td id="E_6"></td>
+                    <td id="E_7"></td>
 
+                    <tr></tr>
+                    <!-- row F-->
+                    <td id="F_1"></td>
+                    <td id="F_2"></td>
+                    <td id="F_3"></td>
+                    <td id="F_4"></td>
+                    <td id="F_5"></td>
+                    <td id="F_6"></td>
+                    <td id="F_7"></td>
 
-                    <tr></tr> <!-- row F-->
-                        <td  id="F_1"></td>
-                        <td id="F_2"></td>
-                        <td  id="F_3"></td>
-                        <td  id="F_4"></td>
-                        <td  id="F_5"></td>
-                        <td id="F_6"></td>
-                        <td  id="F_7"></td>
-
-                    <tr></tr> <!-- row G-->
-                        <td  id="G_1"></td>
-                        <td  id="G_2"></td>
-                        <td  id="G_3"></td>
-                        <td  id="G_4"></td>
-                        <td  id="G_5"></td>
-                        <td  id="G_6"></td>
-                        <td  id="G_7"></td>
+                    <tr></tr>
+                    <!-- row G-->
+                    <td id="G_1"></td>
+                    <td id="G_2"></td>
+                    <td id="G_3"></td>
+                    <td id="G_4"></td>
+                    <td id="G_5"></td>
+                    <td id="G_6"></td>
+                    <td id="G_7"></td>
                 </table>
             </div>
         </div>
-    <script type="text/javascript" >
-        function revert_to_yellow(green, red, mint, blue, purple, pink, orange){
-            $(document.getElementById(green)).css("background-color", "#fff39e");
-            $(document.getElementById(red)).css("background-color", "#fff39e");
-            $(document.getElementById(mint)).css("background-color", "#fff39e");
-            $(document.getElementById(blue)).css("background-color", "#fff39e");
-            $(document.getElementById(purple)).css("background-color", "#fff39e");
-            $(document.getElementById(pink)).css("background-color", "#fff39e");
-            $(document.getElementById(orange)).css("background-color", "#fff39e");
-        }
 
-        function set_new_colors(green, red, mint, blue, purple, pink, orange){
-            $(document.getElementById(green)).css("background-color", "#599B85");
-            $(document.getElementById(red)).css("background-color", "#ba2200");
-            $(document.getElementById(mint)).css("background-color", "#99ff99");
-            $(document.getElementById(blue)).css("background-color", "#80ffff");
-            $(document.getElementById(purple)).css("background-color", "#990099");
-            $(document.getElementById(pink)).css("background-color", "#ff6666");
-            $(document.getElementById(orange)).css("background-color", "#ff6600");
-        }
+        <script type="text/javascript">
+            function revert_to_yellow(green, red, mint, blue, purple, pink, orange) {
+                $(document.getElementById(green)).css("background-color", "#FAF8FB");
+                $(document.getElementById(red)).css("background-color", "#FAF8FB");
+                $(document.getElementById(mint)).css("background-color", "#FAF8FB");
+                $(document.getElementById(blue)).css("background-color", "#FAF8FB");
+                $(document.getElementById(purple)).css("background-color", "#FAF8FB");
+                $(document.getElementById(pink)).css("background-color", "#FAF8FB");
+                $(document.getElementById(orange)).css("background-color", "#FAF8FB");
+            }
 
-        function set_hover_colors(green, red, mint, blue, purple, pink, orange){
-            $("td").hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#fff39e");
-            });
+            function set_new_colors(green, red, mint, blue, purple, pink, orange) {
+                $(document.getElementById(green)).css("background-color", "#007b58");
+                $(document.getElementById(red)).css("background-color", "#ba2200");
+                $(document.getElementById(mint)).css("background-color", "#99ff99");
+                $(document.getElementById(blue)).css("background-color", "#80ffff");
+                $(document.getElementById(purple)).css("background-color", "#990099");
+                $(document.getElementById(pink)).css("background-color", "#ff6666");
+                $(document.getElementById(orange)).css("background-color", "#ff6600");
+            }
 
-            $(document.getElementById(green)).hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#599B85");
-            });
-            $(document.getElementById(red)).hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#ba2200");
-            });
-            $(document.getElementById(mint)).hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#99ff99");
-            });
-            $(document.getElementById(blue)).hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#80ffff");
-            });
-            $(document.getElementById(purple)).hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#990099");
-            });
-            $(document.getElementById(pink)).hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#ff6666");
-            });
-            $(document.getElementById(orange)).hover(function(){
-                $(this).css("background-color", "#a2c7b6");
-            }, function(){
-                $(this).css("background-color", "#ff6600");
-            });
-        }
-
-        $.getJSON('/get_level_{{this_lvl}}', function (data) {
-            console.log(data);
-
-            var my_level = "{{this_lvl}}";
-            var my_round = 1;
-            var player_score = "{{start_score}}";
-            document.getElementById("score").innerHTML = "score: " + player_score + " | level: " + my_level + " | {{username}}";
-            console.log(my_round);
-
-            var rounds_in_lvl = "{{rounds_in_lvl}}";
-            var round = data[1];
-            var green = round["green"];
-            var red = round["red"];
-            var mint = round["mint"];
-            var blue = round["blue"];
-            var purple = round["purple"];
-            var pink = round["pink"];
-            var orange = round["orange"]
-
-            set_new_colors(green, red, mint, blue, purple, pink, orange);
-            set_hover_colors(green, red, mint, blue, purple, pink, orange);
-
-            var start_lvl_json = {
-                "element_id": "---",
-                "event": "start level" + my_level,
-                "state": "---",
-                "music": "{{mus_name}}"
-            };
-
-            $.ajax({
-                type: "POST",
-                url : 'http://townsonr.pythonanywhere.com/get_data',
-                data: JSON.stringify(start_lvl_json),
-                dataType: 'json',
-                success: function() {
-                    console.log("success");
-                }
-            });
-
-            var start_round_json = {
-                "element_id": "---",
-                "event": "start round" + my_round,
-                "state": "---",
-                "music": "{{mus_name}}"
-            };
-
-            $.ajax({
-                type: "POST",
-                url : 'http://townsonr.pythonanywhere.com/get_data',
-                data: JSON.stringify(start_round_json),
-                dataType: 'json',
-                success: function() {
-                    console.log("success");
-                }
-            });
-
-            alert("Click 'OK' to start Level " + my_level +  ", Round " + my_round + ".");
-
-            $("td").click(function() {
-                // revert back to yellow
-                revert_to_yellow(red, green, mint, blue, purple, pink, orange);
-
-                if (my_round < rounds_in_lvl){
-
-                    if( $(this).attr("id") == red ) {
-                        console.log("bad click");
-                        var bad_click_json = {
-                            "element_id": $(this).attr("id"),
-                            "event": "click",
-                            "state": "bad",
-                            "music": "{{mus_name}}"
-                        };
-
-                        $.ajax({
-                            type: "POST",
-                            url : 'http://townsonr.pythonanywhere.com/get_data',
-                            data: JSON.stringify(bad_click_json),
-                            dataType: 'json',
-                            success: function() {
-                                console.log("success");
-                                }
-                        });
-
-                        location.assign('/bad_click');
-
-                    } else if ( $(this).attr("id") == green ){
-                        console.log("good click");
-
-                        var good_click_json = {
-                            "element_id": $(this).attr("id"),
-                            "event": "click",
-                            "state": "good",
-                            "music": "{{mus_name}}"
-                        };
-
-                        $.ajax({
-                            type: "POST",
-                            url : 'http://townsonr.pythonanywhere.com/get_data',
-                            data: JSON.stringify(good_click_json),
-                            dataType: 'json',
-                            success: function() {
-                                console.log("success");
-                                }
-                        });
-
-                        ++player_score;
-                        console.log("score: "+ player_score);
-                        document.getElementById("score").innerHTML = "score: " + player_score + " | level: " + my_level +" | {{username}}";
-
-                        ++my_round;
-                        console.log(my_round);
-                        alert("Click 'OK' to start Level " + my_level +  ", Round " + my_round + ".");
-                        
-                        var start_round_json = {
-                            "element_id": "---",
-                            "event": "start round" + my_round,
-                            "state": "---",
-                            "music": "{{mus_name}}"
-                        };
-
-                        $.ajax({
-                            type: "POST",
-                            url : 'http://townsonr.pythonanywhere.com/get_data',
-                            data: JSON.stringify(start_round_json),
-                            dataType: 'json',
-                            success: function() {
-                                console.log("success");
-                            }
-                        });
-
-                        round = data[my_round];
-                        green = round["green"];
-                        red = round["red"];
-                        mint = round["mint"];
-                        blue = round["blue"];
-                        purple = round["purple"];
-                        pink = round["pink"];
-                        orange = round["orange"];
-
-                        // set new colors
-                        set_new_colors(green, red, mint, blue, purple, pink, orange);
-
-                        // set hover colors
-                        set_hover_colors(green, red, mint, blue, purple, pink, orange);
-
-                    } else {
-
-                        alert("Try again! Click 'OK' to restart the level. ");
-                        var okay_click_json = {
-                            "element_id": $(this).attr("id"),
-                            "event": "click",
-                            "state": "bad",
-                            "music": "{{mus_name}}"
-                        };
-
-                        $.ajax({
-                            type: "POST",
-                            url : 'http://townsonr.pythonanywhere.com/get_data',
-                            data: JSON.stringify(okay_click_json),
-                            dataType: 'json',
-                            success: function() {
-                                console.log("success");
-                                }
-                        });
-
-                        var restart_lvl_json = {
-                            "element_id": "---",
-                            "event": "restart level" + my_level,
-                            "state": "---",
-                            "music": "{{mus_name}}"
-                        };
-
-                        $.ajax({
-                            type: "POST",
-                            url : 'http://townsonr.pythonanywhere.com/get_data',
-                            data: JSON.stringify(restart_lvl_json),
-                            dataType: 'json',
-                            success: function() {
-                                console.log("success");
-                            }
-                        });
-                        location.reload();
+            function set_hover_colors(green, red, mint, blue, purple, pink, orange) {
+                $("td").hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#FAF8FB");
                     }
-                } else {
-                    alert("Starting new level!");
-                        if ("{{next_lvl}}" == "win"){
-                            ++player_score;
-                            var win_json = {
-                                "element_id": "---",
-                                "event": "win",
-                                "state": "score: " + player_score ,
-                                "music": "{{mus_name}}"
-                            };
+                );
 
-                            $.ajax({
-                                type: "POST",
-                                url : 'http://townsonr.pythonanywhere.com/get_data',
-                                data: JSON.stringify(win_json),
-                                dataType: 'json',
-                                success: function() {
-                                    console.log("success");
-                                }
-                            });
-                      
-                            location.assign('/play/lvlwin_' + player_score);
-                        } else if ("{{next_lvl}}" == "play"){
-                            ++player_score;
-                            var play_json = {
-                                "element_id": "---",
-                                "event": "practice win",
-                                "state": "score: " + player_score ,
-                                "music": "{{mus_name}}"
-                            };
+                $(document.getElementById(green)).hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#007b58");
+                    }
+                );
+                $(document.getElementById(red)).hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#ba2200");
+                    }
+                );
+                $(document.getElementById(mint)).hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#99ff99");
+                    }
+                );
+                $(document.getElementById(blue)).hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#80ffff");
+                    }
+                );
+                $(document.getElementById(purple)).hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#990099");
+                    }
+                );
+                $(document.getElementById(pink)).hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#ff6666");
+                    }
+                );
+                $(document.getElementById(orange)).hover(
+                    function () {
+                        $(this).css("background-color", "#a2c7b6");
+                    },
+                    function () {
+                        $(this).css("background-color", "#ff6600");
+                    }
+                );
+            }
 
-                            $.ajax({
-                                type: "POST",
-                                url : 'http://townsonr.pythonanywhere.com/get_data',
-                                data: JSON.stringify(play_json),
-                                dataType: 'json',
-                                success: function() {
-                                    console.log("success");
-                                }
-                            });
+            $.getJSON("/get_level_{{this_lvl}}", function (data) {
+                console.log(data);
 
+                var trial_number = "{{trial_number}}"
 
-                            location.assign('/play/lvlwin_' + player_score);
-                        } else {
+                var my_level = "{{this_lvl}}";
 
-                            location.assign('/play/{{next_lvl}}');
-                        }
-                }
+                var my_round = 1;
+                var player_score = "{{start_score}}";
+                document.getElementById("score").innerHTML = "score: " + player_score + " | level: " + my_level + " | {{username}}";
+                console.log(my_round);
 
-            });
+                var rounds_in_lvl = "{{rounds_in_lvl}}";
 
-            $("td").mouseover(function() {
-                console.log($(this).attr("id"));
+                var round = data[1];
+                var green = round["green"];
+                var red = round["red"];
+                var mint = round["mint"];
+                var blue = round["blue"];
+                var purple = round["purple"];
+                var pink = round["pink"];
+                var orange = round["orange"];
 
-                var good_hover_json = {
-                    "element_id": $(this).attr("id"),
-                    "event": "hover",
-                    "state": "good",
-                    "music": "{{mus_name}}"
+                set_new_colors(green, red, mint, blue, purple, pink, orange);
+
+                // set hover colors
+                set_hover_colors(green, red, mint, blue, purple, pink, orange);
+
+                var start_lvl_json = {
+                    element_id: "---",
+                    event: "start level" + my_level,
+                    state: "---",
+                    music: "{{mus_name}}",
                 };
-                console.log(good_hover_json);
 
                 $.ajax({
                     type: "POST",
-                    url : 'http://townsonr.pythonanywhere.com/get_data',
-                    data: JSON.stringify(good_hover_json),
-                    dataType: 'json',
-                    success: function() {
+                    url: "http://townsonr.pythonanywhere.com/get_data",
+                    data: JSON.stringify(start_lvl_json),
+                    dataType: "json",
+                    success: function () {
                         console.log("success");
-                        }
+                    },
                 });
 
-                if( $(this).attr("id") == red ){
-                    console.log("bad hover");
-                    var bad_hover_json = {
-                            "element_id": $(this).attr("id"),
-                            "event": "hover",
-                            "state": "bad",
-                            "music": "{{mus_name}}"
+                var start_round_json = {
+                    element_id: "---",
+                    event: "start round" + my_round,
+                    state: "---",
+                    music: "{{mus_name}}",
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://townsonr.pythonanywhere.com/get_data",
+                    data: JSON.stringify(start_round_json),
+                    dataType: "json",
+                    success: function () {
+                        console.log("success");
+                    },
+                });
+
+                alert("Click 'OK' to start Level " + my_level + ", Round " + my_round + ".");
+
+                $("td").click(function () {
+                    // revert back to yellow
+                    revert_to_yellow(red, green, mint, blue, purple, pink, orange);
+
+                    if (my_round < rounds_in_lvl) {
+                        if ($(this).attr("id") == red) {
+                            console.log("bad click");
+                            var bad_click_json = {
+                                element_id: $(this).attr("id"),
+                                event: "click",
+                                state: "bad",
+                                music: "{{mus_name}}",
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://townsonr.pythonanywhere.com/get_data",
+                                data: JSON.stringify(bad_click_json),
+                                dataType: "json",
+                                success: function () {
+                                    console.log("success");
+                                },
+                            });
+
+                            location.assign("/bad_click");
+                        } else if ($(this).attr("id") == green) {
+                            console.log("good click");
+
+                            var good_click_json = {
+                                element_id: $(this).attr("id"),
+                                event: "click",
+                                state: "good",
+                                music: "{{mus_name}}",
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://townsonr.pythonanywhere.com/get_data",
+                                data: JSON.stringify(good_click_json),
+                                dataType: "json",
+                                success: function () {
+                                    console.log("success");
+                                },
+                            });
+
+                            ++player_score;
+                            console.log("score: " + player_score);
+                            document.getElementById("score").innerHTML = "score: " + player_score + " | level: " + my_level + " | {{username}}";
+
+                            ++my_round;
+                            console.log(my_round);
+                            // console.log(out_json);
+                            alert("Click 'OK' to start Level " + my_level + ", Round " + my_round + ".");
+                            // out_json["round"] =  my_round;
+
+                            var start_round_json = {
+                                element_id: "---",
+                                event: "start round" + my_round,
+                                state: "---",
+                                music: "{{mus_name}}",
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://townsonr.pythonanywhere.com/get_data",
+                                data: JSON.stringify(start_round_json),
+                                dataType: "json",
+                                success: function () {
+                                    console.log("success");
+                                },
+                            });
+
+                            round = data[my_round];
+                            green = round["green"];
+                            red = round["red"];
+                            mint = round["mint"];
+                            blue = round["blue"];
+                            purple = round["purple"];
+                            pink = round["pink"];
+                            orange = round["orange"];
+
+                            // set new colors
+                            set_new_colors(green, red, mint, blue, purple, pink, orange);
+
+                            // set hover colors
+                            set_hover_colors(green, red, mint, blue, purple, pink, orange);
+                        } else {
+                            // console.log(out_json);
+                            alert("Try again! Click 'OK' to restart the level. ");
+                            var okay_click_json = {
+                                element_id: $(this).attr("id"),
+                                event: "click",
+                                state: "bad",
+                                music: "{{mus_name}}",
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://townsonr.pythonanywhere.com/get_data",
+                                data: JSON.stringify(okay_click_json),
+                                dataType: "json",
+                                success: function () {
+                                    console.log("success");
+                                },
+                            });
+
+                            var restart_lvl_json = {
+                                element_id: "---",
+                                event: "restart level" + my_level,
+                                state: "---",
+                                music: "{{mus_name}}",
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://townsonr.pythonanywhere.com/get_data",
+                                data: JSON.stringify(restart_lvl_json),
+                                dataType: "json",
+                                success: function () {
+                                    console.log("success");
+                                },
+                            });
+                            location.reload();
+                            // out_json["level"] =  my_level;
+                        }
+                    } else {
+                        alert("Starting new level!");
+                        if ("{{next_lvl}}" == "win") {
+                            ++player_score;
+                            var win_json = {
+                                element_id: "---",
+                                event: "win",
+                                state: "score: " + player_score,
+                                music: "{{mus_name}}",
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://townsonr.pythonanywhere.com/get_data",
+                                data: JSON.stringify(win_json),
+                                dataType: "json",
+                                success: function () {
+                                    console.log("success");
+                                },
+                            });
+                            if ("{{trial_number}}" == "4"){
+                                var go_to = "/update_score_" + player_score + "/trial" + trial_number + "/good";
+                                location.assign(go_to);
+                            }
+
+                            location.assign("/play/lvlwin_/trial{{trial_number}}" + player_score);
+                        } else if ("{{next_lvl}}" == "play") {
+                            ++player_score;
+                            var play_json = {
+                                element_id: "---",
+                                event: "practice win",
+                                state: "score: " + player_score,
+                                music: "{{mus_name}}",
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "http://townsonr.pythonanywhere.com/get_data",
+                                data: JSON.stringify(play_json),
+                                dataType: "json",
+                                success: function () {
+                                    console.log("success");
+                                },
+                            });
+
+                            location.assign("/play/lvlwin_/trial{{trial_number}}" + player_score);
+                        } else {
+                            location.assign("/play/{{next_lvl}}/trial{{trial_number}}");
+                        }
+                    }
+                });
+
+                $("td").mouseover(function () {
+                    console.log($(this).attr("id"));
+
+                    var good_hover_json = {
+                        element_id: $(this).attr("id"),
+                        event: "hover",
+                        state: "good",
+                        music: "{{mus_name}}",
+                    };
+                    console.log(good_hover_json);
+
+                    $.ajax({
+                        type: "POST",
+                        url: "http://townsonr.pythonanywhere.com/get_data",
+                        data: JSON.stringify(good_hover_json),
+                        dataType: "json",
+                        success: function () {
+                            console.log("success");
+                        },
+                    });
+
+                    if ($(this).attr("id") == red) {
+                        console.log("bad hover");
+                        var bad_hover_json = {
+                            element_id: $(this).attr("id"),
+                            event: "hover",
+                            state: "bad",
+                            music: "{{mus_name}}",
                         };
 
                         $.ajax({
                             type: "POST",
-                            url : 'http://townsonr.pythonanywhere.com/get_data',
+                            url: "http://townsonr.pythonanywhere.com/get_data",
                             data: JSON.stringify(bad_hover_json),
-                            dataType: 'json',
-                            success: function() {
+                            dataType: "json",
+                            success: function () {
                                 console.log("success");
-                                }
+                            },
                         });
 
-                        if ("{{mus_name}}" == "---"){
+                        if ("{{mus_name}}" == "---") {
                             var the_end = "end practice";
                             var go_to = "/practice/update_score_ ";
                         } else {
                             var the_end = "end game";
-                            var go_to = "/update_score_";;
+                            var go_to = "/update_score_" + player_score + "/trial" + trial_number +"/bad";
                         }
 
                         var end_game_json = {
-                            "element_id": "---",
-                            "event": the_end,
-                            "state": "score: " + player_score,
-                            "music": "{{mus_name}}"
+                            element_id: "---",
+                            event: the_end,
+                            state: "score: " + player_score,
+                            music: "{{mus_name}}",
                         };
 
                         $.ajax({
                             type: "POST",
-                            url : 'http://townsonr.pythonanywhere.com/get_data',
+                            url: "http://townsonr.pythonanywhere.com/get_data",
                             data: JSON.stringify(end_game_json),
-                            dataType: 'json',
-                            success: function() {
+                            dataType: "json",
+                            success: function () {
                                 console.log("success");
-                                }
+                            },
                         });
-                    location.assign(go_to + player_score);
-                }
+                        ++trial_number;
+                        location.assign(go_to);
+                    }
+                });
             });
-        })
-    </script>
+        </script>
     </body>
 </html>
