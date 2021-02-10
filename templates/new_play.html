@@ -244,8 +244,6 @@
                 var orange = round["orange"];
 
                 set_new_colors(green, red, mint, blue, purple, pink, orange);
-
-                // set hover colors
                 set_hover_colors(green, red, mint, blue, purple, pink, orange);
 
                 var start_lvl_json = {
@@ -285,7 +283,6 @@
                 alert("Click 'OK' to start Level " + my_level + ", Round " + my_round + ".");
 
                 $("td").click(function () {
-                    // revert back to yellow
                     revert_to_yellow(red, green, mint, blue, purple, pink, orange);
 
                     if (my_round < rounds_in_lvl) {
@@ -335,9 +332,7 @@
 
                             ++my_round;
                             console.log(my_round);
-                            // console.log(out_json);
                             alert("Click 'OK' to start Level " + my_level + ", Round " + my_round + ".");
-                            // out_json["round"] =  my_round;
 
                             var start_round_json = {
                                 element_id: "---",
@@ -365,13 +360,9 @@
                             pink = round["pink"];
                             orange = round["orange"];
 
-                            // set new colors
                             set_new_colors(green, red, mint, blue, purple, pink, orange);
-
-                            // set hover colors
                             set_hover_colors(green, red, mint, blue, purple, pink, orange);
                         } else {
-                            // console.log(out_json);
                             alert("Try again! Click 'OK' to restart the level. ");
                             var okay_click_json = {
                                 element_id: $(this).attr("id"),
@@ -407,7 +398,6 @@
                                 },
                             });
                             location.reload();
-                            // out_json["level"] =  my_level;
                         }
                     } else {
                         alert("Starting new level!");
