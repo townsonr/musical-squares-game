@@ -1,85 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> How to Play</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png">
+        <title>How to Play</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/XbEmy2N.png" />
+        <link rel="stylesheet" href="static/stylesheet.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <style>
-            body {
-                background-color: #fff39e;
-                text-align: left;
-                color: #007b58;
-                font-family: "Georgia", serif;
+            .main {
+                height: 3300px;
             }
 
-            p {
-                font-size: 20px;
+            .header h1 {
+                padding: 10px;
+            }
+
+            .header {
+                position: absolute;
             }
 
             h3 {
                 font-size: 25px;
             }
 
-            h2 {
-                font-size: 30px;
-            }
-
-            .wrapper {
-                margin: 60px auto 25px;
-                width: 800px;
-                border: 5px solid rgba(0, 122, 88, 0.5);
-                border-radius: 25px;
-                padding: 20px;
-            }
-
             img {
-                margin-left: 200px;
-                margin-right: 200px;
-                width: 400px;
-            }
-
-            .the_button {
-                margin: auto;
-                width: 105px;
-            }
-
-            .my_button {
-                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c9671), color-stop(1, #007b58) );
-                background:-moz-linear-gradient( center top, #1c9671 5%, #007b58 100% );
-                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c9671', endColorstr='#007b58');
-                background-color:#1c9671;
-                -webkit-border-top-left-radius:42px;
-                -moz-border-radius-topleft:42px;
-                border-top-left-radius:42px;
-                -webkit-border-top-right-radius:42px;
-                -moz-border-radius-topright:42px;
-                border-top-right-radius:42px;
-                -webkit-border-bottom-right-radius:42px;
-                -moz-border-radius-bottomright:42px;
-                border-bottom-right-radius:42px;
-                -webkit-border-bottom-left-radius:42px;
-                -moz-border-radius-bottomleft:42px;
-                border-bottom-left-radius:42px;
-            text-indent:0;
-                display:inline-block;
-                color:#ffffff;
-                font-family:Georgia;
-                font-size:14px;
-                font-weight:normal;
-                font-style:normal;
-            height:37px;
-                line-height:37px;
-            width:120px;
-                text-decoration:none;
-                text-align:center;
-            }.my_button:hover {
-                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007b58), color-stop(1, #1c9671) );
-                background:-moz-linear-gradient( center top, #007b58 5%, #1c9671 100% );
-                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007b58', endColorstr='#1c9671');
-                background-color:#007b58;
-            }.my_button:active {
-                position:relative;
-                top:1px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 300px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-radius: 10px;
             }
 
             div.for_images {
@@ -87,57 +36,80 @@
                 text-align: center;
             }
 
-            div.for_text {
-                margin-left: 50px;
+            .column p {
+                background-color: rgba(200, 162, 200, 0.5);
+                border-radius: 10px;
+                padding: 20px 50px;
+                text-align: center;
+                width: 400px;
+                margin: 10px auto;
             }
 
+            button {
+                background-color: #007b58;
+            }
+
+            button:hover {
+                color: white;
+            }
         </style>
     </head>
+
     <body>
-        <h2 style="text-align:center;"> {{welcome}} </h2>
-        <p style="text-align:center;"> {{msg}} </p>
-        <div class="wrapper">
-            <h3 style="text-align:center; "> Here's How to Play: </h3>
+        <div class="main">
+            <div class="header">
+                <h1 style="text-align: center;">{{welcome}}</h1>
+            </div>
+            <p style="text-align: center;">{{msg}}</p>
 
-            <div class="for_images">
-                <img style="vertical-align:middle ; width: 300px;" src="https://i.imgur.com/oRGmUCI.gif">
-                <p> Make sure to use headphones or have your computer volume turned up</p>
-                <br>
+            <h3 style="text-align: center;">Here's How to Play:</h3>
+            <div class="column">
+                <div class="for_images">
+                    <p>
+                        <img style="vertical-align: middle; width: 300px;" src="https://i.imgur.com/oRGmUCI.gif" /> <br />
+                        Make sure to use headphones or have your computer <b>volume</b> turned up.
+                    </p>
+                    <br />
 
-                <img style="vertical-align:middle" src="https://i.imgur.com/HN9HVsl.gif">
-                <p> When you hover over a box, it will turn light green</p>
-                <br>
+                    <p>
+                        <img style="vertical-align: middle;" src="https://i.imgur.com/HN9HVsl.gif" /> <br />
+                        When you <b>hover</b> over a box, it becomes shaded green
+                    </p>
+                    <br />
 
-                <img style="vertical-align:middle" src="https://i.imgur.com/oBM1lDQ.gif">
-                <p> When you click on a box, it will turn dark green</p>
-                <br>
+                    <p>
+                        <img style="vertical-align: middle;" src="https://i.imgur.com/oBM1lDQ.gif" /> <br />
+                        When you click on a box, it will turn dark green
+                    </p>
+                    <br />
 
-                <img style="vertical-align:middle" src="https://i.imgur.com/6mcjUCl.gif">
-                <p>  Your Goal: click on the <b><a style="color:#006649">dark green </a></b> box</p>
-                <br>
+                    <p>
+                        <img style="vertical-align: middle;" src="https://i.imgur.com/6mcjUCl.gif" /> <br />
+                        Find the <b><a style="color: #006649;">dark green </a></b> box on the grid and click on it to score a point
+                    </p>
+                    <br />
 
-                <img style="vertical-align:middle" src="https://i.imgur.com/K72hMRe.gif">
-                <p> Don't touch the <b><a style="color:#ba2200">red </a></b>boxes! This will end the game</p>
-                <br>
+                    <p>
+                        <img style="vertical-align: middle;" src="https://i.imgur.com/K72hMRe.gif" /> <br />
+                        Don't touch the <b><a style="color: #ba2200;">red </a></b>boxes! This will end the game
+                    </p>
+                    <br />
 
-                <img style="vertical-align:middle" src="https://i.imgur.com/fHlqqhD.gif">
-                <p> Click the alert to begin each round </p>
-                <br>
+                    <p>
+                        <img style="vertical-align: middle;" src="https://i.imgur.com/fHlqqhD.gif" /> <br />
+                        Click the <b>alert</b> to begin each round
+                    </p>
+                    <br />
 
-                <p> Gain one point for every correct box you click! </p>
-                <p> To level up, click the correct green box in every round.</p>
-                <p> Each level requires more correct consecutive clicks than the last.</p>
+                    <p>Gain one point for every correct box you click!</p>
+                    <p>To level up, click the correct green box in every round.</p>
+                    <p>Each level requires more correct consecutive clicks than the last.</p>
+                    <br />
+                    <a href="http://townsonr.pythonanywhere.com/start_trial/trial1">
+                        <button style="font-size: 20px;"><b>Start Practice</b></button>
+                    </a>
+                </div>
             </div>
         </div>
-            <div class="the_button">
-                <a class="my_button" id=button>Start Practice</a>
-            </div>
-            <br>
     </body>
-        <script>
-        $("#button").click(function() {
-
-            location.assign("/play/practice/lvl1");
-        });
-        </script>
 </html>
