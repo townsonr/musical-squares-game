@@ -15,7 +15,7 @@ def create_square(s):
 
 
 def create_grid(s):
-    ''' Creates an s x s dict with {color, id} with no id overlaps'''
+    ''' Creates an s x s dict with {color: id} with no id overlaps'''
     color_list = ["green", "red", "mint", "blue", "purple", "pink", "orange"]
     id_set = set()  # to guarantee no overlaps
     while len(id_set) < s:
