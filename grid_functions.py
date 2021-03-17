@@ -35,35 +35,59 @@ def create_level(n, s):
 
 def get_music(choose="", lvls_in_game=5, song="", lvl=0, trial="0"):
     ''' Choosing music for each round of the game'''
-    mus_dict = {"citylife": "https://www.free-stock-music.com/music/artificial-music-city-life.mp3",
-                "shortbreak": "https://www.free-stock-music.com/music/glitch-short-break.mp3",
-                "stoned": "https://www.free-stock-music.com/music/alexander-nakarada-stoned.mp3",
-                "agreatcalm": "https://www.free-stock-music.com/music/kev-rowe-a-great-calm.mp3",
-                "kaleidoscope": "https://www.free-stock-music.com/music/fsm-team-escp-kaleidoscope.mp3",
-                "vintageradiostation": "https://www.free-stock-music.com/music/sakura-hz-vintage-radio-station.mp3",
-                "midnightdrive": "https://www.free-stock-music.com/music/inossi-midnight-drive.mp3"
+    mus_dict = {"citylife": "/static/artificial-music-city-life",
+                "shortbreak": "/static/glitch-short-break",
+                "stoned": "/static/alexander-nakarada-stoned",
+                "agreatcalm": "/static/kev-rowe-a-great-calm",
+                "kaleidoscope": "/static/fsm-team-escp-kaleidoscope",
+                "vintageradiostation": "/static/sakura-hz-vintage-radio-station",
+                "midnightdrive": "/static/inossi-midnight-drive",
+                "melancholia" : "/static/fsm-team-escp-yellowtree-melancholia-goth-emo-type-beat" ,
+                "spiritcross" : "/static/schematist-spirit-cross",
+                "catalyst" : "/static/alexander-nakarada-catalyst",
+                "meadows" : "/static/artificial-music-meadows-in-the-sky",
+                "banger" : "/static/fsm-team-banger",
+                "poprock" : "/static/lukenield-alternative-pop-rock-instrumental",
+                "altrock" : "/static/lukenield-alternative-rock-instrumental",
+                "wavy" : "/static/punch-deck-keep-it-wavy",
+                "rise" : "/static/punch-deck-rise",
+                "chilly": "/static/purrple-cat-chilly",
+                "gottago" : "/static/tokyo-music-walker-gotta-go",
+                "ninendo" : "/static/yoitrax-nintendo-64",
+                "springtime" : "/static/fsm-team-escp-eternal-springtime"
                 }
-    a_list = ["agreatcalm", "citylife", "stoned", "vintageradiostation"]
-    b_list = ["kaleidoscope", "midnightdrive", "melancholia", "spiritcross"]
-    if trial == "4": # changing tempo
+    list1 = ["agreatcalm", "citylife", "vintageradiostation", "meadows", "chilly"]
+    list2 = ["kaleidoscope", "springtime", "ninendo", "gottago" ]
+    list3 = ["midnightdrive", "banger", "altrock", "poprock", "rise"]
+    list4 = ["stoned", "melancholia", "spiritcross", "wavy", "catalyst"]
+    tempo_change = ["agreatcalm", "citylife", "vintageradiostation", "kaleidoscope", "midnightdrive", "stoned", "melancholia", "spiritcross"]
+    if trial == "4":
         tempo = 0
-        if choose == "even":
+        if choose%2:
             tempo = 10 * lvl - 30
-        elif choose == "odd":
+        else:
             tempo = -10 * lvl + 30
         mus = mus_dict[song] + "_" + str(tempo) + ".mp3"
-        song += " " + str(tempo)
+        song += (" " + str(tempo))
         return song, mus
+    elif trial == "random":
+        mus_key = random.choice(tempo_change)
+        return mus_key, mus_dict[mus_key] + ".mp3"
     elif trial == "3":  # choose random song for each round
         mus_key = random.choice(list(mus_dict.keys()))
         return mus_key, mus_dict[mus_key] + ".mp3"
     elif trial == "2":
-        if choose == "even":
-            mus_key = random.choice(a_list)
-            return mus_key, mus_dict[mus_key] + ".mp3"
-        if choose == "odd":
-            mus_key = random.choice(b_list)
-            return mus_key, mus_dict[mus_key] + ".mp3"
+        mus_list = []
+        if song == "1":
+            mus_list = list1
+        if song == "2":
+            mus_list = list2
+        if song == "3":
+            mus_list = list3
+        if song == "4":
+            mus_list = list4
+        mus_key = random.choice(mus_list)
+        return mus_key, mus_dict[mus_key] + ".mp3"
     elif trial == "1":
         return "none", str()
 
